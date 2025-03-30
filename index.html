@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid bg-light">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 bg-white shadow-lg rounded p-4 mt-4">
+                <div class="text-center mb-4">
+                    <div class="logo-container text-center my-3">
+                        <!-- Alternative Premium REDDROP LIFE Logo -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180" style="max-width: 380px; height: auto;">
+                            <!-- Definitions -->
+                            <defs>
+                                <!-- Main Drop Gradient -->
+                                <linearGradient id="dropGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#f44336" />
+                                    <stop offset="100%" stop-color="#b71c1c" />
+                                </linearGradient>
+                                
+                                <!-- Shine Effect -->
+                                <radialGradient id="shineGradient2" cx="35%" cy="30%" r="60%" fx="30%" fy="30%">
+                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7" />
+                                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                                </radialGradient>
+                                
+                                <!-- Shadow Effect -->
+                                <filter id="dropShadow2" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                                    <feOffset dx="3" dy="3" result="offsetblur" />
+                                    <feComponentTransfer>
+                                        <feFuncA type="linear" slope="0.3" />
+                                    </feComponentTransfer>
+                                    <feMerge>
+                                        <feMergeNode />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                                
+                                <!-- Text Shadow -->
+                                <filter id="textShadow" x="-10%" y="-10%" width="120%" height="120%">
+                                    <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                                    <feOffset dx="1" dy="1" result="offsetblur" />
+                                    <feComponentTransfer>
+                                        <feFuncA type="linear" slope="0.5" />
+                                    </feComponentTransfer>
+                                    <feMerge>
+                                        <feMergeNode />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Background Circle -->
+                            <circle cx="90" cy="90" r="70" fill="#f5f5f5" filter="url(#dropShadow2)" />
+                            
+                            <!-- Main Blood Drop -->
+                            <path d="M90 30 C90 30, 60 70, 60 110 C60 140, 120 140, 120 110 C120 70, 90 30, 90 30 Z" 
+                                    fill="url(#dropGradient2)" 
+                                    filter="url(#dropShadow2)" />
+                            
+                            <!-- Inner Shine Effect -->
+                            <path d="M90 30 C90 30, 60 70, 60 110 C60 140, 120 140, 120 110 C120 70, 90 30, 90 30 Z" 
+                                    fill="url(#shineGradient2)" 
+                                    opacity="0.7" />
+                            
+                            <!-- Heartbeat Line -->
+                            <path d="M200 90 L220 90 L230 70 L240 110 L250 80 L260 90 L290 90" 
+                                    stroke="#b71c1c" 
+                                    stroke-width="3" 
+                                    stroke-linecap="round"
+                                    fill="none" />
+                            
+                            <!-- REDDROP Text -->
+                            <text x="190" y="65" 
+                                    font-family="'Helvetica Neue', Arial, sans-serif" 
+                                    font-weight="700" 
+                                    font-size="36" 
+                                    letter-spacing="1"
+                                    fill="#b71c1c"
+                                    filter="url(#textShadow)">
+                                REDDROP
+                            </text>
+                            
+                            <!-- LIFE Text -->
+                            <text x="320" y="105" 
+                                    font-family="'Helvetica Neue', Arial, sans-serif" 
+                                    font-weight="700" 
+                                    font-size="36" 
+                                    letter-spacing="1"
+                                    fill="#212121"
+                                    filter="url(#textShadow)">
+                                LIFE
+                            </text>
+                            
+                            <!-- Tagline -->
+                            <text x="192" y="135" 
+                                    font-family="'Helvetica Neue', Arial, sans-serif" 
+                                    font-style="italic" 
+                                    font-size="14" 
+                                    fill="#616161">
+                                Give Blood. Give Life.
+                            </text>
+                            
+                            <!-- Decorative Elements -->
+                            <circle cx="180" cy="90" r="4" fill="#b71c1c" />
+                            <circle cx="300" cy="90" r="4" fill="#b71c1c" />
+                            
+                            <!-- Subtle Cross Symbol -->
+                            <path d="M90 75 L90 105 M75 90 L105 90" 
+                                    stroke="#ffffff" 
+                                    stroke-width="5" 
+                                    stroke-linecap="round"
+                                    opacity="0.4" />
+                        </svg>
+                    </div>
+                    <h1 class="text-danger">Blood Donation Network</h1>
+                    <p class="text-muted">Connecting Donors and Hospitals</p>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        Donor Registration
+                    </div>
+                    <div class="card-body">
+                        <form id="registration-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="tel" class="form-control" id="contact" placeholder="Contact Number" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-select" id="blood-group" required>
+                                        <option value="">Select Blood Group</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="location" placeholder="City" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Register as Donor</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        Blood Donation Chatbot
+                    </div>
+                    <div class="card-body">
+                        <div id="chat-log" class="mb-3 chat-log-container"></div>
+                        <div class="input-group">
+                            <input type="text" id="user-input" class="form-control" 
+                                placeholder="Enter blood group, location or ask a question">
+                            <button onclick="sendMessage()" class="btn btn-danger">Send</button>
+                        </div>
+                        <div class="mt-2">
+                            <small class="text-muted">
+                                Tip: Type "get hospital details" to view verified hospitals
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-hospital-details" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Hospital Verification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="hospital-details-form">
+                        <div class="mb-3">
+                            <label for="hospital-name" class="form-label">Hospital Name</label>
+                            <input type="text" id="hospital-name" class="form-control" placeholder="Enter Hospital Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hospital-location" class="form-label">Hospital Location</label>
+                            <input type="text" id="hospital-location" class="form-control" placeholder="Enter Hospital Location" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hospital-contact" class="form-label">Hospital Contact Number</label>
+                            <input type="tel" id="hospital-contact" class="form-control" placeholder="10-digit Contact Number" pattern="[0-9]{10}" required>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">Verify Hospital</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
